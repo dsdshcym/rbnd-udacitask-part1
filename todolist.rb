@@ -11,6 +11,10 @@ class TodoList
     @items.push(item)
   end
 
+  def delete_item(item_id)
+    @items.delete_at(item_id - 1)
+  end
+
   def rename(new_title)
     @title = new_title
   end
