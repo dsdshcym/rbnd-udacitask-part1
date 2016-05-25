@@ -25,9 +25,7 @@ class TodoList
 
   def print
     print_title
-    @items.each_with_index do |item, index|
-      puts "#{index + 1} - #{item}"
-    end
+    print_items
   end
 
   private
@@ -40,6 +38,12 @@ class TodoList
     print_divider
     puts @title
     print_divider
+  end
+
+  def print_items
+    @items.each_with_index do |item, index|
+      puts "#{index + 1} - #{item}"
+    end
   end
 end
 
