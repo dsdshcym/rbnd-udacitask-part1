@@ -10,6 +10,10 @@ class TodoList
     item = Item.new(new_item)
     @items.push(item)
   end
+
+  def rename(new_title)
+    @title = new_title
+  end
 end
 
 class Item
