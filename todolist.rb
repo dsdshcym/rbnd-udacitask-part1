@@ -22,6 +22,25 @@ class TodoList
   def rename(new_title)
     @title = new_title
   end
+
+  def print
+    print_title
+    @items.each_with_index do |item, index|
+      puts "#{index + 1} - #{item}"
+    end
+  end
+
+  private
+
+  def print_divider
+    puts "-" * @title.length
+  end
+
+  def print_title
+    print_divider
+    puts @title
+    print_divider
+  end
 end
 
 class Item
