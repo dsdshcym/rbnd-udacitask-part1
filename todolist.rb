@@ -39,4 +39,8 @@ class Item
   def completed?
     @completed_status
   end
+
+  def to_s
+    "#{@description}\tCompleted: #{@completed_status}"
+  end
 end
