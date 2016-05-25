@@ -35,4 +35,8 @@ class Item
   def toggle
     @completed_status = !@completed_status
   end
+
+  def completed?
+    @completed_status
+  end
 end
