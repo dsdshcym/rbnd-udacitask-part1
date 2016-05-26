@@ -41,8 +41,8 @@ class TodoList
   end
 
   def print_items
-    @items.each_with_index do |item, index|
-      puts "#{index + 1} - #{item}"
+    @items.each.with_index(1) do |item, index|
+      puts "#{index} - #{item}"
     end
   end
 end
