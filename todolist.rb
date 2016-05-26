@@ -24,25 +24,26 @@ class TodoList
   end
 
   def print
+    print_divider
     print_title
     print_items
+    print_divider
   end
 
   private
 
   def print_divider
-    puts "-" * @title.length
+    puts "-" * 80
   end
 
   def print_title
-    print_divider
-    puts @title
-    print_divider
+    puts "* #{@title}"
   end
 
   def print_items
     @items.each.with_index(1) do |item, index|
-      puts "#{index} - #{item}"
+      item_status = item.completed? ? "DONE" : "TODO"
+      puts "** #{item_status} #{index}. #{item.description}"
     end
   end
 end
@@ -61,9 +62,5 @@ class Item
 
   def completed?
     @completed_status
-  end
-
-  def to_s
-    "#{@description}\tCompleted: #{@completed_status}"
   end
 end
